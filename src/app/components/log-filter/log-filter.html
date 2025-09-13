@@ -1,0 +1,6 @@
+<mat-form-field appearance="fill" style="width: 200px;">
+  <mat-label>Filter by Level</mat-label>
+  <mat-select [(value)]="selectedLevel" (selectionChange)="onFilterChange($event.value)">
+    <mat-option *ngFor="let l of levels" [value]="l">{{ l }}</mat-option>
+  </mat-select>
+</mat-form-field>

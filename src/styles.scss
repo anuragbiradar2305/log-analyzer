@@ -1,1 +1,115 @@
-/* You can add global styles to this file, and also import other style files */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #f4f6f8;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Toolbar */
+header {
+  background: #1976d2;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* File Upload */
+input[type="file"] {
+  border: 1px solid #ccc;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+/* Search Box */
+.search-box input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 200px;
+}
+
+/* Buttons */
+button {
+  background: #1976d2;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #125aa0;
+}
+
+/* Log Stats */
+.stats {
+  display: flex;
+  gap: 20px;
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.stats .item {
+  flex: 1;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Log List */
+.log-list {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.log-entry {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  font-family: monospace;
+}
+
+.log-entry:last-child {
+  border-bottom: none;
+}
+
+/* Log Level Colors */
+.log-entry.info { color: #1976d2; }
+.log-entry.warn { color: #ff9800; }
+.log-entry.error { color: #d32f2f; }
+.log-entry.debug { color: #388e3c; }

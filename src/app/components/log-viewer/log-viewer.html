@@ -1,0 +1,23 @@
+<div class="controls">
+  <label>Filter by Level:</label>
+  <select [(ngModel)]="selectedLevel">
+    <option value="ALL">All</option>
+    <option value="INFO">INFO</option>
+    <option value="DEBUG">DEBUG</option>
+    <option value="WARN">WARN</option>
+    <option value="ERROR">ERROR</option>
+  </select>
+
+  <label>Search:</label>
+  <input type="text" [(ngModel)]="searchText" placeholder="Search logs..." />
+</div>
+
+<ul class="logs">
+  <li
+    *ngFor="let log of logs | logFilter:selectedLevel:searchText"
+    [class]="log.level.toLowerCase()"
+  >
+    <strong>[{{ log.level }}]</strong>
+    {{ log.timestamp }} ({{ log.source }}) - {{ log.message }}
+  </li>
+</ul>
