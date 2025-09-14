@@ -1,59 +1,70 @@
-# LogAnalyzer
+# 📊 Angular Log Analyzer
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.1.
+A simple **log analyzer built with Angular (standalone components)**.  
+It allows you to **upload log files**, parse them into structured entries, and filter/search through them with a clean UI.
 
-## Development server
+No backend required — everything runs in the browser.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🚀 Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Upload `.log` or `.txt` files and parse logs into structured objects.
+- Detects **timestamp**, **level** (`INFO`, `DEBUG`, `WARN`, `ERROR`), **source** (if available), and **message**.
+- Real-time filtering:
+  - By **log level** (INFO, DEBUG, WARN, ERROR, or ALL).
+  - By **search keyword** (message, source, level, or timestamp).
+- Displays:
+  - 📑 **Log Viewer** (wrapper for log filtering + list).
+  - 📜 **Log List** (detailed view of logs).
+  - 📈 **Log Stats** (counts by level).
+- Uses **RxJS streams** for reactive updates.
+- Written in **Angular 20 standalone components** (no NgModules).
+- Angular Material used for UI
+  **➡️ TODO:** Material theming is currently not applied — needs fixing in styles configuration.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📦 Prerequisites
 
-```bash
-ng generate component component-name
-```
+- [Node.js](https://nodejs.org/) **v18+**
+- [Angular CLI](https://angular.dev/tools/cli) **v16+**
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Check versions:
 
 ```bash
-ng test
+node -v
+npm -v
+ng version
+
+🛠 Setup
+
+1️⃣ Clone the repository
+    git clone git@github.com:anuragbiradar2305/log-analyzer.git
+    cd log-analyzer
+
+2️⃣ Install dependencies
+    npm install
+
+3️⃣ Run App
+    ng serve
+
+---
+
+## 📸 Screenshots
+
+Here’s how the Log Analyzer UI looks:
+
+### Index Page
+![Screenshot 1](screencast/1_index.png)
+
+### Upload and View Log file
+![Screenshot 2](screencast/2_upload_view.png)
+
+### Filter by level (DEBUG Filter applied here)
+![Screenshot 3](screencast/3_filter_by_level.png)
+
+### Search by keyword (UserId=1023 (Anurag)
+![Screenshot 4](screencast/4_search_by_word.png)
+
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
